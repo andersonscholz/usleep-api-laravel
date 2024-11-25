@@ -1,19 +1,17 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\TesteController;
+use App\Http\Controllers\TestControllers;
+use App\Http\Controllers\NoiteDeSonoController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/cadastro', [UsuarioController::class, 'cadastro']);
+Route::post('/login', [UsuarioController::class, 'login']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [UsuarioController::class, 'logout']);
+    Route::post('/noites-de-sono', [NoiteDeSonoController::class, 'adicionarNoiteDeSono']);
+    Route::get('/noites-de-sono', [NoiteDeSonoController::class, 'listarNoitesDeSono']);
 });
+Route::post('/solicitar-redefinicao-senha', [UsuarioController::class, 'solicitarRedefinicaoSenha']);
+Route::post('/redefinir-senha', [UsuarioController::class, 'redefinirSenha']);
