@@ -76,7 +76,16 @@ class UsuarioController extends Controller
   
     
 
-
+    public function listarUsuarios()
+    {
+        // Recupera todos os usuários, excluindo campos sensíveis
+        $usuarios = Usuario::select('id', 'nome', 'email', 'created_at', 'updated_at')->get();
+    
+        return response()->json([
+            'message' => 'Usuários recuperados com sucesso!',
+            'data' => $usuarios
+        ], 200);
+    }
 
     
 }

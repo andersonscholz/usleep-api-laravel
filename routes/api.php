@@ -15,3 +15,8 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 Route::post('/solicitar-redefinicao-senha', [UsuarioController::class, 'solicitarRedefinicaoSenha']);
 Route::post('/redefinir-senha', [UsuarioController::class, 'redefinirSenha']);
+
+
+
+// Rota para listar todos os usuários (apenas para testes)
+Route::get('/usuarios', [UsuarioController::class, 'listarUsuarios']);
