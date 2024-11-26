@@ -19,4 +19,4 @@ Route::post('/redefinir-senha', [UsuarioController::class, 'redefinirSenha']);
 
 
 // Rota para listar todos os usuários (apenas para testes)
-Route::get('/usuarios', [UsuarioController::class, 'listarUsuarios']);
+Route::get('/', [UsuarioController::class, 'listarUsuarios']);
