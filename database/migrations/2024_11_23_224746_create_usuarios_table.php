@@ -13,12 +13,12 @@ class CreateUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) { // cria tabela no banco
             $table->id(); // Cria uma coluna 'id' como chave primária
-            $table->string('nome'); // Coluna 'nome' para o nome do usuário
-            $table->string('email')->unique(); // Coluna 'email', única
-            $table->string('senha'); // Coluna 'senha'
-            $table->timestamps(); // Cria colunas 'created_at' e 'updated_at'
+            $table->string('nome'); 
+            $table->string('email')->unique(); 
+            $table->string('senha'); 
+            $table->timestamps(); 
         });
     }
 

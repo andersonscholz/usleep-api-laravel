@@ -14,8 +14,8 @@ class UsuarioController extends Controller
 {
     public function cadastro(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'nome' => 'required|string|min:3|max:255',
+        $validator = Validator::make($request->all(), [ 
+            'nome' => 'required|string|min:3|max:255', // garante minimo 3 e max 255 caracteres
             'email' => 'required|email|unique:usuarios,email',
             'senha' => 'required|string|min:6',
         ]);
