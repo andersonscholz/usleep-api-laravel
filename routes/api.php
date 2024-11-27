@@ -13,8 +13,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/noites-de-sono', [NoiteDeSonoController::class, 'adicionarNoiteDeSono']);
     Route::get('/noites-de-sono', [NoiteDeSonoController::class, 'listarNoitesDeSono']);
 });
-Route::post('/solicitar-redefinicao-senha', [UsuarioController::class, 'solicitarRedefinicaoSenha']);
-Route::post('/redefinir-senha', [UsuarioController::class, 'redefinirSenha']);
+// Route::post('/solicitar-redefinicao-senha', [UsuarioController::class, 'solicitarRedefinicaoSenha']);
+// Route::post('/redefinir-senha', [UsuarioController::class, 'redefinirSenha']);
 
 
 
